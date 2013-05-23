@@ -1,7 +1,9 @@
 <UserScriptConfig>
-	<Script basedir="gmap_extract" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="extract infor from g-maps" enabled="true" filename="gmap_extract.user.js" installTime="1369325302828" modified="1369325302828" name="gmap_extract" namespace="infos_extract" runAt="document-end" uuid="53581bf0-aff0-40ad-a7d2-5f8fa3ed027c" version="1" installurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gmap_extract/gmap_extract.user.js" updateurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gmap_extract/gmap_extract.user.js">
-		<Grant>none</Grant>
+	<Script basedir="gmap_extract" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="extract infor from g-maps" enabled="true" filename="gmap_extract.user.js" installTime="1369325302828" modified="1369325788187" name="gmap_extract" namespace="infos_extract" runAt="document-end" uuid="53581bf0-aff0-40ad-a7d2-5f8fa3ed027c" version="2" installurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gmap_extract/gmap_extract.user.js" updateurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gmap_extract/gmap_extract.user.js">
+		<Grant>GM_getValue</Grant>
+		<Grant>GM_setValue</Grant>
 		<Include>https://maps.google.com/*</Include>
 		<Include>http://maps.google.com/*</Include>
+		<Require filename="jquery-1.9.1.min.js"/>
 	</Script>
 </UserScriptConfig>
