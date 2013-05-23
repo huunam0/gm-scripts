@@ -6,4 +6,9 @@
 		<Include>http://maps.google.com/*</Include>
 		<Require filename="jquery-1.9.1.min.js"/>
 	</Script>
+	<Script basedir="gplus_extract" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="" enabled="true" filename="gplus_extract.user.js" installTime="1369326647593" modified="1369326757406" name="gplus_extract" namespace="infos_extract" runAt="document-end" uuid="aa8b1637-3f37-4358-a51b-6241802f3b01" version="1" installurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gplus_extract/gplus_extract.user.js" updateurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gplus_extract/gplus_extract.user.js">
+		<Grant>none</Grant>
+		<Include>https://plus.google.com/*/photos*</Include>
+		<Require filename="jquery-1.9.1.min.js"/>
+	</Script>
 </UserScriptConfig>
