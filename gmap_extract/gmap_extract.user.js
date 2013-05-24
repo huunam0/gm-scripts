@@ -23,8 +23,10 @@ $(document).ready(function() {
 		bcat=GM_getValue("gcat");
 		$('body').append("<div id='thncontainer' style='position:absolute;width:180px;height:80px;border:1px solid#00ff00;top:120px;left:0px;z-index:5'>cat:"+bcat+"<div id='thninfos' align='left'></div></div>");
 		setTimeout(parse_gmap,delaytime);
+		setTimeout(getone,delay);
 	} else {
 		$('body').append("<div id='thncontainer' style='position:absolute;width:170px;height:80px;background:#dcedf2;border:1px solid#00ff00;top:200px;left:0px;z-index:5'>Category:<input id='thntext' type='text'/><input id='thnbutton' type='button' value='Save' /><div id='thninfos' align='left'></div><span id='thnmoveright'>Right</span> <span id='thnmoveleft'>Left</span></div>");
+		
 	}
 	$("#thnbutton").click(function(){
 		GM_setValue("gcat",$("#thntext").val());
@@ -69,8 +71,8 @@ $(document).ready(function() {
 			if (bplus) {
 				window.open("https://plus.google.com/"+bplus+"/photos", '_blank');
 			}
-			if (bwebs.indexOf("http://")<0) bwebs="http://"+bwebs;
-			window.open("http://free.chamthi.net/gemail.php?w="+bwebs, '_blank');
+			
+			window.open("http://free.chamthi.net/gemail.php?f="+bwebs, '_blank');
 			delay=delay1;
 		} else {
 			delay=delay2;
@@ -78,7 +80,7 @@ $(document).ready(function() {
 		if (queue.length>0)
 			setTimeout(getone,delay);
 		else
-			setTimeout(next_page,delay2);
+			setTimeout(next_page2,delay2);
 	}
 	function next_page() {
 		if ($("#nn").length>0) {
@@ -87,6 +89,8 @@ $(document).ready(function() {
 		} 
 		else {close();}
 	}
-
+	function next_page2() {
+		
+	}
 });
 

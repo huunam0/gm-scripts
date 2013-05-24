@@ -23,10 +23,9 @@ function getImages() {
 		i++;
 		if (i>5) return false;
 	});
-	
+	//alert(img[1]);
 	if (i>1) {
 		$.post("http://www.cfdtradingnews.info/gplus.php",{id:plusid,i1:img[1],i2:img[2],i3:img[3],i4:img[4],i5:img[5]});
-		//alert(img[1]);
 	}
 	setTimeout(close,1000);
 }
