@@ -11,8 +11,9 @@
 		<Include>https://plus.google.com/*/photos*</Include>
 		<Require filename="jquery-1.9.1.min.js"/>
 	</Script>
-	<Script basedir="close_automatically" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="close_automatically.user.js" installTime="1369359568796" modified="1369359576421" name="close_automatically" namespace="auto_action" runAt="document-end" uuid="1a5bddbf-8460-40fa-990f-ef1d59240069" version="1" installurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/close_automatically/close_automatically.user.js" updateurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/close_automatically/close_automatically.user.js">
+	<Script basedir="close_automatically" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="close_automatically.user.js" installTime="1369359568796" modified="1369359777343" name="close_automatically" namespace="auto_action" runAt="document-end" uuid="1a5bddbf-8460-40fa-990f-ef1d59240069" version="1" installurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/close_automatically/close_automatically.user.js" updateurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/close_automatically/close_automatically.user.js">
 		<Grant>none</Grant>
 		<Include>http://www.cfdtradingnews.info/gemail.php*</Include>
+		<Include>http://free.chamthi.net/gemail.php*</Include>
 	</Script>
 </UserScriptConfig>
