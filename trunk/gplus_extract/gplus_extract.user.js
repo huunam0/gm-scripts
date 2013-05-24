@@ -5,7 +5,7 @@
 // @require		http://code.jquery.com/jquery-1.9.1.min.js
 // @version     1
 // ==/UserScript==
-setTimeout(getImages,8000);
+setTimeout(getImages,5000);
 
 function getImages() {
 	//alert($("img.tDMXke").length);
