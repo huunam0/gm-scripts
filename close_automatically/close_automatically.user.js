@@ -6,4 +6,4 @@
 // @version     1
 // ==/UserScript==
 
-setTimeout(close,5000);
+setTimeout(close,7000);

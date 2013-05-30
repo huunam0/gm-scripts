@@ -9,30 +9,67 @@
 // @grant       GM_getValue
 // @grant       GM_setValue
 // ==/UserScript==
-
+if (window.top == window.self)
 $(document).ready(function() {
 	var cont = false;
 	var bcat="";
+	var stop = 0;
 	var queue=[];
-	var delaytime=5000;
-	var delay1=5000;
-	var delay2=2000;
+	var delaytime=9000;
+	var delay1=9000;
+	var delay2=4000;
 	var delay=delay1;
 	var url=window.location.href+"";
-	var i=1;
-	var p=1;
-	if (url.indexOf("https://maps.google.com/maps")>=0) {
+	var i=0;
+	if (url.indexOf("//maps.google.com/maps")>=0) {
 		bcat=GM_getValue("gcat");
-		$('body').append("<div id='thncontainer' style='position:absolute;width:180px;height:80px;border:1px solid#00ff00;top:120px;left:0px;z-index:5'>cat:"+bcat+"<div id='thninfos' align='left'></div></div>");
+		$('body').append("<div id='thncontainer' style='position:absolute;width:200px;height:90px;border:1px solid#00ff00;top:120px;left:0px;z-index:5'>cat:"+bcat+"<div id='thninfos' align='left'></div></div>");
 		setTimeout(parse_gmap,delaytime);
 	} else {
-		$('body').append("<div id='thncontainer' style='position:absolute;width:170px;height:80px;background:#dcedf2;border:1px solid#00ff00;top:200px;left:0px;z-index:5'>Category:<input id='thntext' type='text'/><input id='thnbutton' type='button' value='Save' /><div id='thninfos' align='left'></div><span id='thnmoveright'>Right</span> <span id='thnmoveleft'>Left</span></div>");
-		
+		$('body').append("<div id='thncontainer' style='position:absolute;width:260px;height:90px;background:#dcedf2;border:1px solid#00ff00;top:200px;left:0px;z-index:5'>Category:<input id='thntext' type='text'/><br/>Keyword:<input id='thnkeys' type='text'/><input id='thnbutton' type='button' value='Add' /><div id='thninfos' align='left'></div></div>");
+		vonglap();
 	}
 	$("#thnbutton").click(function(){
-		GM_setValue("gcat",$("#thntext").val());
-		$("#thninfos").append($("#thntext").val() + "<br/>");
+		queue.push([$("#thnkeys").val(),$("#thntext").val()]);
+		$("#thninfos").append("<div>"+$("#thnkeys").val()+"@"+$("#thntext").val() + "</div>");
+		$("#thnkeys").val("");
+		$("#thntext").val("");
 	});
+	function vonglap() {
+		//if (queue.length<1) return;
+		stop = GM_getValue("gstop",0);
+		$("#thninfos").append(stop);
+		if (stop==1) {
+			if (queue.length>=1)
+				timkiem();
+			else
+				setTimeout(vonglap,delaytime);
+		}
+		else
+			setTimeout(vonglap,delaytime);
+	}
+	function timkiem() {
+		
+		var muc = queue.shift();
+		GM_setValue("gcat",muc[1]);
+		GM_setValue("gstop",0);
+		$("#gbqfq").val(muc[0]);
+		$("#gbqfb").click();
+		$("#thninfos div:first").append("...");
+		setTimeout(waitandopen,6000);
+	}
+	function waitandopen() {
+		var nurl=$("#navbar:visible a:first").length>0?$("#navbar:visible a:first").attr("href"):"";
+		if (nurl) {
+			nurl = nurl.replace(/&start=10/gi,"");
+		} else {
+			var ts=$("#gbqfq").val()+"";
+			nurl = "https://maps.google.com/maps?q=" + ts.replace(" ","+");
+		}
+		window.open(nurl, '_blank');
+		$("#thninfos div:first").remove();
+		setTimeout(vonglap,delaytime);
+	}
 	function gup(surl,name){
 		name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");  
 		var regexS = "[\\?&]"+name+"=([^&#]*)";  
@@ -42,16 +79,16 @@ $(document).ready(function() {
 		else    return results[1];
 	}
 	function parse_gmap() {
+		GM_setValue("gstop",0);
 		var bname="";
 		var baddr='';
 		var bphon='';
 		var bwebs='';
-		$("#thninfos").html("Getting page "+p+"...<br/>");
+		$("#thninfos").html("Getting page "+$("#nc:visible").next().text()+"...<br/>");
 		$("#resultspanel .res>div").each(function(){
 			queue.push(this);
 			//return false;
 		});
-		p++;
 		setTimeout(getone,delay);
 	}
 	function getone() {
@@ -60,6 +97,10 @@ $(document).ready(function() {
 			var bname=$(block).find(".pp-place-title").length>0?$(block).find(".pp-place-title").text():"";
 			var baddr=$(block).find(".pp-headline-address").length>0?$(block).find(".pp-headline-address").text():"";
 			var bphon=$(block).find(".telephone").length>0?$(block).find(".telephone").text():"";
+			if (bphon) {
+				bphon=bphon.replace("()","");
+				bphon=bphon.replace("  "," ");
+			}
 			var bwebs=$(block).find(".pp-headline-authority-page").length>0?$(block).find(".pp-headline-authority-page").text():"";
 			var bplus=$(block).find("a.pp-more-content-link").length>0?$(block).find("a.pp-more-content-link").attr('href'):"";
 			if (bplus) {
@@ -69,7 +110,7 @@ $(document).ready(function() {
 			}
 			bwebs=$.trim(bwebs);
 			if (bwebs) {
-				$("#thninfos").append(i+"- "+bname+"<br/>");
+				$("#thninfos").append(String.fromCharCode(i+65)+i+"- "+bname+"<br/>");
 				$.post("http://www.cfdtradingnews.info/gmap.php",{name:bname,addr:baddr,phone:bphon,web:bwebs,plus:bplus,cat:bcat});
 				//post_to_url("http://www.cfdtradingnews.info/gmap.php", {name:bname,addr:baddr,phone:bphon,web:bwebs,plus:bplus,cat:bcat}, "post");
 				if (bplus) {
@@ -85,45 +126,22 @@ $(document).ready(function() {
 			setTimeout(getone,delay);
 		}
 		else {
-			i=1;
-			next_page();
+			i=0;
+			setTimeout(next_page,2000);
 			$("#thninfos").html("waiting...<br/>");
 		}
 		//setTimeout(getone,delay);
 	}
 	function next_page() {
-		if ($("#nn").length>0) {
-			$("#nn").click();
+		if ($("#nn:visible").length>0) {
+			$("#nn:visible").click();
 			setTimeout(parse_gmap,delaytime);
-		} 
-		else {close();}
+		} else {
+			GM_setValue("gstop",1);
+			//alert(window.location.href);
+			window.close();
+		}
 	}
-	function next_page2() {
-		
-	}
-function post_to_url(path, params, method) {
-    method = method || "post"; // Set method to post by default if not specified.
 
-    // The rest of this code assumes you are not using a library.
-    // It can be made less wordy if you use one.
-    var form = document.createElement("form");
-    form.setAttribute("method", method);
-    form.setAttribute("action", path);
-	form.setAttribute("target", "_blank");
-
-    for(var key in params) {
-        if(params.hasOwnProperty(key)) {
-            var hiddenField = document.createElement("input");
-            hiddenField.setAttribute("type", "hidden");
-            hiddenField.setAttribute("name", key);
-            hiddenField.setAttribute("value", params[key]);
-
-            form.appendChild(hiddenField);
-         }
-    }
-
-    document.body.appendChild(form);
-    form.submit();
-}
 });
 
