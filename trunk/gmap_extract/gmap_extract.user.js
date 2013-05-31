@@ -16,8 +16,8 @@ $(document).ready(function() {
 	var stop = 0;
 	var queue=[];
 	var delaytime=9000;
-	var delay1=9000;
-	var delay2=4000;
+	var delay1=5000;
+	var delay2=3000;
 	var delay=delay1;
 	var url=window.location.href+"";
 	var i=0;
@@ -38,7 +38,7 @@ $(document).ready(function() {
 	function vonglap() {
 		//if (queue.length<1) return;
 		stop = GM_getValue("gstop",0);
-		$("#thninfos").append(stop);
+		//$("#thninfos").append(stop);
 		if (stop==1) {
 			if (queue.length>=1)
 				timkiem();
@@ -100,6 +100,7 @@ $(document).ready(function() {
 			if (bphon) {
 				bphon=bphon.replace("()","");
 				bphon=bphon.replace("  "," ");
+				bphon=$.trim(bphon);
 			}
 			var bwebs=$(block).find(".pp-headline-authority-page").length>0?$(block).find(".pp-headline-authority-page").text():"";
 			var bplus=$(block).find("a.pp-more-content-link").length>0?$(block).find("a.pp-more-content-link").attr('href'):"";
@@ -110,14 +111,14 @@ $(document).ready(function() {
 			}
 			bwebs=$.trim(bwebs);
 			if (bwebs) {
-				$("#thninfos").append(String.fromCharCode(i+65)+i+"- "+bname+"<br/>");
-				$.post("http://www.cfdtradingnews.info/gmap.php",{name:bname,addr:baddr,phone:bphon,web:bwebs,plus:bplus,cat:bcat});
-				//post_to_url("http://www.cfdtradingnews.info/gmap.php", {name:bname,addr:baddr,phone:bphon,web:bwebs,plus:bplus,cat:bcat}, "post");
+				$("#thninfos").append(String.fromCharCode(i+64)+i+"- "+bname+"<br/>");
+				//$.post("http://www.cfdtradingnews.info/gmap.php",{name:bname,addr:baddr,phone:bphon,web:bwebs,plus:bplus,cat:bcat});
+				window.open("http://www.cfdtradingnews.info/gmap2.php?n="+encodeURI(bname)+"&a="+encodeURI(baddr)+"&ph="+encodeURI(bphon)+"&w="+bwebs+"&p="+bplus+"&c="+encodeURI(bcat),"_blank");
 				if (bplus) {
-					window.open("https://plus.google.com/"+bplus+"/photos", '_blank');
+					//window.open("https://plus.google.com/"+bplus+"/photos", '_blank');
 				}
 				
-				window.open("http://free.chamthi.net/gemail.php?f="+bwebs, '_blank');
+				//window.open("http://free.chamthi.net/gemail.php?f="+bwebs, '_blank');
 				delay=delay1;
 			} else {
 				delay=delay2;
@@ -142,6 +143,6 @@ $(document).ready(function() {
 			window.close();
 		}
 	}
-
+	function next_page2() {}
 });
 
