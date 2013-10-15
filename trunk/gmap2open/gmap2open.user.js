@@ -2,22 +2,30 @@
 // @name        gmap2open
 // @namespace   autoaction
 // @include     http://www.cfdtradingnews.info/gmap2.php*
+// @include     http://localhost/gmap/gmap2.php*
 // @require http://code.jquery.com/jquery-1.9.1.min.js
 // @version     1
 // ==/UserScript==
 
 $(document).ready(function() {
-	setTimeout(xuli,2000);
+	var url = window.location.href+"";
+	if (url.indexOf("localhost")>0)
+        url = "http://localhost/gmap/getemail.php";
+    else
+	   url = "http://free.chamthi.net/gemail.php";
+     
+	setTimeout(xuli,3000);
 	function xuli() {
 		if ($("#bweb").length>0) {
 			var bweb = $("#bweb").text()+"";
-			//if (bweb.indexOf("http")!=0) bweb="http://"+bweb;
-			//window.open("http://free.chamthi.net/gemail.php?f="+bweb, '_blank');
 			var bplus =  $("#bplus").text()+"";
 			if (bplus) {
 				window.open("https://plus.google.com/"+bplus+"/photos", '_blank');
 			}
-			window.location.href = "http://free.chamthi.net/gemail.php?f="+bweb;
+			if (bweb)
+				window.location.href = url + "?f="+bweb;
+			else 
+				window.close();
 		} else {
 			window.close();
 		}

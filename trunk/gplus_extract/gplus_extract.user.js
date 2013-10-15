@@ -5,8 +5,9 @@
 // @require		http://code.jquery.com/jquery-1.9.1.min.js
 // @version     1
 // ==/UserScript==
-setTimeout(getImages,8000);
-
+setTimeout(getImages,7000);
+//var url2 = "http://www.cfdtradingnews.info/gplus.php";
+var url2 = "http://localhost/gmap/gplus.php";
 function getImages() {
 	//alert($("img.tDMXke").length);
 	//var plusid = $(location).attr('href')+"";
@@ -24,8 +25,18 @@ function getImages() {
 		if (i>5) return false;
 	});
 	//alert(img[1]);
-	if (i>1) {
-		$.post("http://www.cfdtradingnews.info/gplus.php",{id:plusid,i1:img[1],i2:img[2],i3:img[3],i4:img[4],i5:img[5]});
-	}
+	
+	if (i>=1) {
+		//$.post(url2,{id:plusid,i1:img[1],i2:img[2],i3:img[3],i4:img[4],i5:img[5]});//
+		window.location.href=url2+"?id="+plusid+"&i1="+img[1]+"&i2="+img[2]+"&i3="+img[3]+"&i4="+img[4]+"&i5="+img[5]
+		//post_to_url(url2,{id:plusid,i1:img[1],i2:img[2],i3:img[3],i4:img[4],i5:img[5]},'post');
+		/*
+		GM_xmlhttpRequest({
+			method: "POST",
+			url: url2,
+			data: "i1="+img[1]+"&i2="+img[2]+"&i3="+img[3]+"&i4="+img[4]+"&i5="+img[5]
+		});
+		*/
+	} else
 	setTimeout(close,1000);
 }
