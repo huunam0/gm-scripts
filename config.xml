@@ -1,24 +1,73 @@
 <UserScriptConfig>
-	<Script basedir="gmap_extract" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="extract infor from g-maps" enabled="true" filename="gmap_extract.user.js" installTime="1369325302828" modified="1369990141109" name="gmap_extract" namespace="infos_extract" runAt="document-end" uuid="53581bf0-aff0-40ad-a7d2-5f8fa3ed027c" version="2" installurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gmap_extract/gmap_extract.user.js" updateurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gmap_extract/gmap_extract.user.js">
+	<Script basedir="gmap_extract" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="extract infor from g-maps" enabled="true" filename="gmap_extract.user.js" installTime="1369325302828" modified="1381633472914" name="gmap_extract" namespace="infos_extract" runAt="document-end" uuid="53581bf0-aff0-40ad-a7d2-5f8fa3ed027c" version="2.4" installurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gmap_extract/gmap_extract.user.js" updateurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gmap_extract/gmap_extract.user.js">
 		<Grant>GM_getValue</Grant>
 		<Grant>GM_setValue</Grant>
 		<Include>https://maps.google.com/*</Include>
 		<Include>http://maps.google.com/*</Include>
 		<Require filename="jquery-1.9.1.min.js"/>
 	</Script>
-	<Script basedir="gplus_extract" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="" enabled="true" filename="gplus_extract.user.js" installTime="1369326647593" modified="1369681723156" name="gplus_extract" namespace="infos_extract" runAt="document-end" uuid="aa8b1637-3f37-4358-a51b-6241802f3b01" version="1" installurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gplus_extract/gplus_extract.user.js" updateurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gplus_extract/gplus_extract.user.js">
-		<Grant>none</Grant>
+	<Script basedir="gplus_extract" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="" enabled="true" filename="gplus_extract.user.js" installTime="1369326647593" modified="1376326047341" name="gplus_extract" namespace="infos_extract" runAt="document-end" uuid="aa8b1637-3f37-4358-a51b-6241802f3b01" version="1" installurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gplus_extract/gplus_extract.user.js" updateurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/gplus_extract/gplus_extract.user.js">
+		<Grant>GM_xmlhttpRequest</Grant>
 		<Include>https://plus.google.com/*/photos*</Include>
 		<Require filename="jquery-1.9.1.min.js"/>
 	</Script>
-	<Script basedir="close_automatically" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="close_automatically.user.js" installTime="1369359568796" modified="1369681805937" name="close_automatically" namespace="auto_action" runAt="document-end" uuid="1a5bddbf-8460-40fa-990f-ef1d59240069" version="1" installurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/close_automatically/close_automatically.user.js" updateurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/close_automatically/close_automatically.user.js">
+	<Script basedir="close_automatically" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="close_automatically.user.js" installTime="1369359568796" modified="1376324443882" name="close_automatically" namespace="auto_action" runAt="document-end" uuid="1a5bddbf-8460-40fa-990f-ef1d59240069" version="1" installurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/close_automatically/close_automatically.user.js" updateurl="file:///C:/Documents%20and%20Settings/Admin/Application%20Data/Mozilla/Firefox/Profiles/3kvqa832.default/gm_scripts/close_automatically/close_automatically.user.js">
 		<Grant>none</Grant>
 		<Include>http://www.cfdtradingnews.info/gemail.php*</Include>
 		<Include>http://free.chamthi.net/gemail.php*</Include>
+		<Include>http://localhost/gmap/gemail.php*</Include>
+		<Include>http://localhost/gmap/getemail.php*</Include>
+		<Include>http://localhost/gmap/gplus.php*</Include>
 	</Script>
-	<Script basedir="gmap2open" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="" enabled="true" filename="gmap2open.user.js" installTime="1369988691843" modified="1369989620406" name="gmap2open" namespace="autoaction" runAt="document-end" uuid="59ee94a2-472e-4b3e-ba86-dd4d5b95a3fb" version="1" installurl="file:///C:/Documents%20and%20Settings/Administrator/Application%20Data/Mozilla/Firefox/Profiles/448nm0ad.default/gm_scripts/gmap2open/gmap2open.user.js" updateurl="file:///C:/Documents%20and%20Settings/Administrator/Application%20Data/Mozilla/Firefox/Profiles/448nm0ad.default/gm_scripts/gmap2open/gmap2open.user.js">
+	<Script basedir="gmap2open" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="" enabled="true" filename="gmap2open.user.js" installTime="1369988691843" modified="1381633797568" name="gmap2open" namespace="autoaction" runAt="document-end" uuid="59ee94a2-472e-4b3e-ba86-dd4d5b95a3fb" version="1" installurl="file:///C:/Documents%20and%20Settings/Administrator/Application%20Data/Mozilla/Firefox/Profiles/448nm0ad.default/gm_scripts/gmap2open/gmap2open.user.js" updateurl="file:///C:/Documents%20and%20Settings/Administrator/Application%20Data/Mozilla/Firefox/Profiles/448nm0ad.default/gm_scripts/gmap2open/gmap2open.user.js">
 		<Grant>none</Grant>
 		<Include>http://www.cfdtradingnews.info/gmap2.php*</Include>
+		<Include>http://localhost/gmap/gmap2.php*</Include>
 		<Require filename="jquery-1.9.1.min.js"/>
+	</Script>
+	<Script basedir="doanhbadoanhnghiep" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="" enabled="false" filename="doanhbadoanhnghiep.user.js" installTime="1373272411699" modified="1373273491626" name="doanhbadoanhnghiep" namespace="Khao-sat-thong-tin" runAt="document-end" uuid="3276639c-7b2c-41a2-9bda-98726e11c35e" version="1" installurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/doanhbadoanhnghiep/doanhbadoanhnghiep.user.js" updateurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/doanhbadoanhnghiep/doanhbadoanhnghiep.user.js">
+		<Grant>none</Grant>
+		<Include>http://www.danhbadoanhnghiep.vn/</Include>
+		<Require filename="jquery-1.9.1.min.js"/>
+	</Script>
+	<Script basedir="tripadvisor" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="" enabled="false" filename="tripadvisor.user.js" installTime="1373901896863" modified="1378309043911" name="tripadvisor" namespace="extractinfos" runAt="document-end" uuid="bc0272fa-4edf-4e5b-a46f-3feab3e36eb8" version="1" installurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/tripadvisor/tripadvisor.user.js" updateurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/tripadvisor/tripadvisor.user.js">
+		<Grant>unsafeWindow</Grant>
+		<Include>http://www.tripadvisor.com/Restaurant_Review-*.html</Include>
+		<Require filename="jquery-1.9.1.min.js"/>
+	</Script>
+	<Script basedir="kinhdoanhexpress" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="" enabled="false" filename="kinhdoanhexpress.user.js" installTime="1373996183491" modified="1373996662869" name="kinhdoanhexpress" namespace="dangbaitudong" runAt="document-end" uuid="e6a80f3f-3f98-4029-bb09-b2a790aa754e" version="1" installurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/kinhdoanhexpress/kinhdoanhexpress.user.js" updateurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/kinhdoanhexpress/kinhdoanhexpress.user.js">
+		<Grant>none</Grant>
+		<Include>http://kinhdoanh.vnexpress.net/*</Include>
+		<Require filename="jquery-1.9.1.min.js"/>
+	</Script>
+	<Script basedir="freeproxylist" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="" enabled="false" filename="freeproxylist.user.js" installTime="1374223035494" modified="1374228195201" name="freeproxylist" namespace="relayout" runAt="document-end" uuid="d480b211-439b-4773-a8b2-84b719c57cb1" version="1" installurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/freeproxylist/freeproxylist.user.js" updateurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/freeproxylist/freeproxylist.user.js">
+		<Grant>none</Grant>
+		<Include>http://www.freeproxylists.net/?c=&amp;pt=&amp;pr=HTTP&amp;a%5B%5D=0&amp;a%5B%5D=1&amp;a%5B%5D=2&amp;u=90</Include>
+		<Require filename="jquery-1.9.1.min.js"/>
+	</Script>
+	<Script basedir="tripadvisor-cat" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="" enabled="true" filename="tripadvisor-cat.user.js" installTime="1374306099386" modified="1379863315438" name="tripadvisor-cat" namespace="relayout" runAt="document-end" uuid="7319f957-916d-4fc6-b837-c48ddb12fe50" version="1" installurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/tripadvisor-cat/tripadvisor-cat.user.js" updateurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/tripadvisor-cat/tripadvisor-cat.user.js">
+		<Grant>none</Grant>
+		<Include>http://www.tripadvisor.com/Restaurants-*</Include>
+		<Include>http://www.tripadvisor.com/Hotels-*</Include>
+		<Require filename="jquery-1.9.1.min.js"/>
+	</Script>
+	<Script basedir="proxylist" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="" enabled="true" filename="proxylist.user.js" installTime="1374310512914" modified="1377243645195" name="proxylist" namespace="relayout" runAt="document-end" uuid="41ba2ba8-fa83-4040-9c0e-55833e1e8b6b" version="1" installurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/proxylist/proxylist.user.js" updateurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/proxylist/proxylist.user.js">
+		<Grant>none</Grant>
+		<Include>http://www.freeproxylists.net/*</Include>
+		<Require filename="jquery-1.9.1.min.js"/>
+	</Script>
+	<Script basedir="baogia.info" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="false" filename="baogia.info.user.js" installTime="1374552635957" modified="1374687063615" name="baogia.info" namespace="autovisit" runAt="document-end" uuid="a43a7b52-7e90-4d4f-a876-34a1681e0e2f" version="1" installurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/baogia.info/baogia.info.user.js" updateurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/baogia.info/baogia.info.user.js">
+		<Grant>none</Grant>
+		<Include>http://baogia.info*</Include>
+	</Script>
+	<Script basedir="tripadvisor_hotel_detail" checkRemoteUpdates="1" dependhash="0a9a3b430073f9b62e6f028f993fd2772204b4f1" description="" enabled="true" filename="tripadvisor_hotel_detail.user.js" installTime="1375283838194" modified="1379839146213" name="tripadvisor_hotel_detail" namespace="autogetinfos" runAt="document-end" uuid="3012b15e-b1e7-4683-9a20-2ba528db969d" version="1" installurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/tripadvisor_hotel_detail/tripadvisor_hotel_detail.user.js" updateurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/tripadvisor_hotel_detail/tripadvisor_hotel_detail.user.js">
+		<Grant>unsafeWindow</Grant>
+		<Include>http://www.tripadvisor.com/Hotel_Review-*.html</Include>
+		<Require filename="jquery-1.9.1.min.js"/>
+	</Script>
+	<Script basedir="footygoat" checkRemoteUpdates="1" dependhash="da39a3ee5e6b4b0d3255bfef95601890afd80709" description="" enabled="true" filename="footygoat.user.js" installTime="1377241414894" modified="1377241494944" name="footygoat" namespace="autogetinfos" runAt="document-end" uuid="b5b1b3df-69ff-4ebb-84f4-956eba2893e4" version="1" installurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/footygoat/footygoat.user.js" updateurl="file:///C:/Users/Admin/AppData/Roaming/Mozilla/Firefox/Profiles/hpp88irt.default/gm_scripts/footygoat/footygoat.user.js">
+		<Grant>unsafeWindow</Grant>
+		<Include>http://www.footygoat.com/livefootystats/</Include>
+		<Include>http://www.footygoat.com/livefootystats/index.php</Include>
 	</Script>
 </UserScriptConfig>
