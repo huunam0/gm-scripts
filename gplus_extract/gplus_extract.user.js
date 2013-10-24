@@ -17,12 +17,13 @@ function getImages() {
 	plusid = pl[3];
 	//alert(plusid);
 	var src="";
-	var i = 1;
+	var i = 0;
 	var img=new Array("","","","","","","");
-	$("img.tDMXke").each(function(){
-		img[i]= $(this).attr('src');
+	//$("img.tDMXke").each(function(){
+	$("img.Bea").each(function(){
 		i++;
-		if (i>5) return false;
+		img[i]= $(this).attr('src');
+		if (i>=5) return false;
 	});
 	//alert(img[1]);
 	
