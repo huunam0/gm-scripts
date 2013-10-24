@@ -18,7 +18,7 @@ $(document).ready(function() {
 	var queue=[];
 	var delay_loadpage=8000;
 	var delay_wait = 1000; //no change
-	var delay_getone = 7000;
+	var delay_getone = 12000;
 	var n0=0;
 	var url=window.location.href+"";
 	var qplus=[];
